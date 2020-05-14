@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Switch, Route } from 'react-router-dom';
+import userService from "./utils/userService";
+import NavBar from "./components/NavBar/NavBar";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import SignupPage from "./pages/SignupPage/SignupPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+  state = {
+    user: userService.getUser()
+  };
+
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  };
+
+  handleSignupOrLogin = async () => {
+    this.setState({ user: userService.getUser() });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <NavBar user={this.state.user} handleLogout={this.handleLogout} />
+        <Switch>
+          <Route path="/login" exact render={() => (<LoginPage handleSignupOrLogin={this.handleSignupOrLogin} />)}/>
+          <Route path="/signup" exact render={() => (<SignupPage handleSignupOrLogin={this.handleSignupOrLogin} />)}/>
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
