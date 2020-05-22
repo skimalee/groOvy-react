@@ -21,7 +21,7 @@ const postSchema = new Schema ({
     title: String,
     genre: {
         type: String,
-        enum: ['HIP HOP', 'R&B', 'ROCK', 'EDM', 'POP', 'COUNTRY', 'CLASSICAL', 'JAZZ', 'INDIE', 'OTHER']
+        enum: ['HIP HOP', 'R&B', 'ROCK', 'EDM', 'POP', 'COUNTRY', 'CLASSICAL', 'INDIE', 'OTHER']
     },
     comments: [commentSchema]
     }, {timestamps: true 

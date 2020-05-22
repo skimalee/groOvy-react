@@ -15,12 +15,13 @@ function getAccessToken() {
         json: true
     }
 
-    
+    let token ='';
     request.post(options, function(error, response, body) {
         if (!error && response.statusCode === 200) {
-           let token = body.access_token
-           console.log(token)
+            token = body.access_token
         }
+        console.log(token)
+        return token
     })
 
     // fetch('https://accounts.spotify.com/api/token', {
@@ -40,6 +41,8 @@ function getAccessToken() {
     // .then(data => {
     //     console.log(data)
     // })
+
+    return token
 }
 
 module.exports = { getAccessToken }
