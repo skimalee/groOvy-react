@@ -6,7 +6,8 @@ export const NavContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 2em;;
+    padding: 0 2rem;
+
     
 `
 
