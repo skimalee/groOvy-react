@@ -6,7 +6,7 @@ import {
 } from './style'
 
 const NavBar = (props) => {
-    //test
+    //testing
 
     let nav = props.user ?``
         <div>
