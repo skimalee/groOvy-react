@@ -6,8 +6,9 @@ import {
 } from './style'
 
 const NavBar = (props) => {
+    //test
 
-    let nav = props.user ?
+    let nav = props.user ?``
         <div>
             <span className='NavBar-welcome'>WELCOME, {(props.user.name).toUpperCase()}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<Link to='/track'>TRACKED EVENTS</Link></span>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<Link to='' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
