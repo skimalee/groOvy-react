@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import userService from '../../utils/userService';
-import { LoginPageContainer } from './style'
+import { 
+  LoginPageContainer,
+  Form,
+  Input
+} from './style'
 
 class LoginPage extends Component {
   
@@ -35,13 +39,10 @@ class LoginPage extends Component {
     return (
 
       <LoginPageContainer>
-        <p>Log In</p>
-        <form onSubmit={this.handleSubmit} >
+        <Form onSubmit={this.handleSubmit} >
           <div>
-            <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
-          </div>
-          <div>
-            <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
+            <Input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+            <Input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
@@ -49,7 +50,7 @@ class LoginPage extends Component {
               <Link to='/'>Cancel</Link>
             </div>
           </div>
-        </form>
+        </Form>
       </LoginPageContainer>
     );
   }

@@ -1,7 +1,28 @@
 import styled from 'styled-components'
 
 export const LoginPageContainer = styled.div`
-    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 133, 0.5)), no-repeat center/80% url('https://i.imgur.com/SkGcsiL.jpg');
-    background-size: cover;
-    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+`
+
+export const Form = styled.form`
+
+`
+
+export const Input = styled.input`
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    width: 50%;
+    height: 2rem;
+    padding-left: 2rem;
+    left: 18rem;    font-size: 1rem;
+    color: #707070;
+    &:focus {
+        outline: none;
+    }
 `
